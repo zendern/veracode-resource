@@ -6,9 +6,9 @@ name: Build
 # events but only for the master branch
 on:
   push:
-    - branches:
+    branches:
       - master
-    - tags:
+    tags:
       - v*
   pull_request:
     branches:
