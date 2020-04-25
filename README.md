@@ -40,6 +40,21 @@ ${BUILD_PIPELINE_NAME}_${BUILD_JOB_NAME}_${BUILD_NAME}
 ### `slack`: Non standard but see slack-alert example below
 This will take the of the detailed-report.xml and craft a slack message to be sent to the webhook url of your liking. 
 
+Slack message will look contain details of the artifact that was scanned, which veracode scan the results are from and the corresponding number of Static and SCA results.  
+```
+Scan of your-app-2.278.0.jar complete
+application: your-app
+veracode scan: veracode_your-app-publish_247
+Static Results:
+sev5 (Very High) flaws: 0
+sev4 (High) flaws: 0
+sev3 (Medium) flaws: 0
+
+SCA Results:
+sev5 (Very High) flaws: 0
+sev4 (High) flaws: 1
+sev3 (Medium) flaws: 1
+```
 
 ## Example pipeline configuration 
 Using maven to download the artifact from your artifact repo, push it to veracode and then
