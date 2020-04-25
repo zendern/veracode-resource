@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+
+    Copyright (C)2020 - Cardinal Health
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+
+<detailedreport xmlns:xsi="http&#x3a;&#x2f;&#x2f;www.w3.org&#x2f;2001&#x2f;XMLSchema-instance"
+                xmlns="https&#x3a;&#x2f;&#x2f;www.veracode.com&#x2f;schema&#x2f;reports&#x2f;export&#x2f;1.0"
+                xsi:schemaLocation="https&#x3a;&#x2f;&#x2f;www.veracode.com&#x2f;schema&#x2f;reports&#x2f;export&#x2f;1.0 https&#x3a;&#x2f;&#x2f;analysiscenter.veracode.com&#x2f;resource&#x2f;detailedreport.xsd"
+                report_format_version="1.5" account_id="24839" app_name="your-application" app_id="428306"
+                analysis_id="2714181" static_analysis_unit_id="2729934" sandbox_id="617157"
+                first_build_submitted_date="2018-05-22 22&#x3a;46&#x3a;37 UTC"
+                version="your-app-veracode_your-application-publish_48" build_id="2728049"
+                submitter="Andrew Smith" platform="Not Specified" assurance_level="3" business_criticality="3"
+                generation_date="2018-08-22 16&#x3a;27&#x3a;48 UTC" veracode_level="VL2" total_flaws="1"
+                flaws_not_mitigated="0" teams="Your Team" life_cycle_stage="Not Specified" planned_deployment_date=""
+                last_update_time="2018-08-21 19&#x3a;48&#x3a;58 UTC" is_latest_build="true"
+                policy_name="Scan Policy" policy_version="4" policy_compliance_status="Pass"
+                policy_rules_status="Pass" grace_period_expired="false" scan_overdue="false" business_owner=""
+                business_unit="Technologies" tags="" legacy_scan_engine="false">
+    <static-analysis rating="A" score="100" submitted_date="2018-08-21 19&#x3a;14&#x3a;39 UTC"
+                     published_date="2018-08-21 19&#x3a;48&#x3a;49 UTC"
+                     version="your-app-veracode_your-application-publish_48" mitigated_rating="A"
+                     mitigated_score="100" next_scan_due="2018-11-21 20&#x3a;48&#x3a;49 UTC"
+                     analysis_size_bytes="51629965" engine_version="125401">
+        <modules>
+            <module name="your-application-master_201901120119.war" compiler="JAVAC_8" os="Java J2SE 8"
+                    architecture="JVM" loc="2123" score="98" numflawssev0="0" numflawssev1="0" numflawssev2="0"
+                    numflawssev3="0" numflawssev4="1" numflawssev5="0"/>
+        </modules>
+    </static-analysis>
+    <severity level="5"/>
+    <severity level="4">
+        <category categoryid="12" categoryname="Cryptographic Issues" pcirelated="false">
+            <desc>
+                <para text="Applications commonly use energy to make bits"/>
+                <para text="Common mistakes include, but are not limited to, not eating your veggies and falling down a lot."/>
+                <para text="Developers often make the dangerous assumption that they can improve security by closing their eyes."/>
+            </desc>
+            <recommendations>
+                <para text="Just don't do bad things."/>
+            </recommendations>
+            <cwe cweid="12799" cwename="Use of a Broken or Risky Door" pcirelated="false" owasp="12999"
+                 sans="86446" certcpp="83848">
+                <description>
+                    <text text="The use of a broken or risky door."/>
+                </description>
+                <staticflaws>
+                    <flaw severity="4" categoryname="Use of a Broken or Risky Code" count="1"
+                          issueid="5" module="your-application-0.1.201808211902.jar"
+                          type="javax.ohno.Code.getInstance"
+                          description="You used some broken/risky code .... that's no good"
+                          note="" cweid="327" remediationeffort="1" exploitLevel="1" categoryid="12" pcirelated="true"
+                          date_first_occurrence="2018-05-22 17&#x3a;56&#x3a;00 UTC"
+                          remediation_status="Potential False Positive" cia_impact="ppn"
+                          grace_period_expires="2018-06-21 22&#x3a;54&#x3a;00 UTC" affects_policy_compliance="true"
+                          mitigation_status="accepted" mitigation_status_desc="Mitigation Accepted"
+                          sourcefile="DoingService.java" line="45" sourcefilepath="service&#x2f;"
+                          scope="your.service.DoingService"
+                          functionprototype="javax.ohno.Code badMethodCall&#x28;&#x29;"
+                          functionrelativelocation="75">
+                        <mitigations>
+                            <mitigation action="Approve Mitigation" description="Approved after talked with John."
+                                        user="John Doe" date="2018-06-01 18&#x3a;55&#x3a;56 UTC"/>
+                        </mitigations>
+                        <annotations>
+                            <annotation action="Potential False Positive"
+                                        description="Just cause its bad code doesn't mean I shouldn't use it"
+                                        user="John Smith" date="2018-06-01 18&#x3a;34&#x3a;58 UTC"/>
+                        </annotations>
+                    </flaw>
+                    <flaw severity="4"
+                          categoryname="Improper usage of good code"
+                          count="1" issueid="3928" module="your-application-1.37.201810251918.war"
+                          type="java.ohno.Code.write"
+                          description="This call to java.ohno.Code.write&#x28;&#x29; contains a cross-site scripting &#x28;XSS&#x29; flaw. The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim&#x27;s browser. XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis."
+                          note="" cweid="80" remediationeffort="3" exploitLevel="1" categoryid="20" pcirelated="true"
+                          date_first_occurrence="2018-05-16 13&#x3a;59&#x3a;21 UTC" remediation_status="Fixed"
+                          cia_impact="ppn" grace_period_expires="" affects_policy_compliance="false"
+                          mitigation_status="none" mitigation_status_desc="Not Mitigated"
+                          sourcefile="badcode.java" line="31"
+                          sourcefilepath="tmp&#x2f;build&#x2f;e7389cc7&#x2f;yourapp&#x2f;target&#x2f;your-app-1.0-SNAPSHOT&#x2f;app&#x2f;stuff&#x2f;badcode&#x2f;"
+                          scope="stuffResult2class1619597677"
+                          functionprototype="java.ohno.Code doWork&#x28;&#x29;" functionrelativelocation="33"/>
+                    <flaw severity="4"
+                          categoryname="Improper usage of good code"
+                          count="1" issueid="3999" module="your-application-1.37.201810251918.war"
+                          type="java.ohno.Code.write"
+                          description="This call to java.ohno.Code.write&#x28;&#x29; contains a cross-site scripting &#x28;XSS&#x29; flaw. The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim&#x27;s browser. XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis."
+                          note="" cweid="80" remediationeffort="3" exploitLevel="1" categoryid="20" pcirelated="true"
+                          date_first_occurrence="2018-05-16 13&#x3a;59&#x3a;21 UTC" remediation_status="Fixed"
+                          cia_impact="ppn" grace_period_expires="" affects_policy_compliance="false"
+                          mitigation_status="none" mitigation_status_desc="Not Mitigated"
+                          sourcefile="badcode.java" line="32"
+                          sourcefilepath="tmp&#x2f;build&#x2f;e7389cc7&#x2f;yourapp&#x2f;target&#x2f;your-app-1.0-SNAPSHOT&#x2f;app&#x2f;stuff&#x2f;badcode&#x2f;"
+                          scope="stuffResult2class1619597677"
+                          functionprototype="java.ohno.Code doWork&#x28;&#x29;" functionrelativelocation="34"/>
+                    <flaw severity="4"
+                          categoryname="Improper usage of good code"
+                          count="1" issueid="3801" module="your-application-1.37.201810251918.war"
+                          type="java.ohno.Code.write"
+                          description="This call to java.ohno.Code.write&#x28;&#x29; contains a cross-site scripting &#x28;XSS&#x29; flaw. The application populates the HTTP response with untrusted input, allowing an attacker to embed malicious content, such as Javascript code, which will be executed in the context of the victim&#x27;s browser. XSS vulnerabilities are commonly exploited to steal or manipulate cookies, modify presentation of content, and compromise confidential information, with new attack vectors being discovered on a regular basis."
+                          note="" cweid="80" remediationeffort="3" exploitLevel="1" categoryid="20" pcirelated="true"
+                          date_first_occurrence="2018-05-16 13&#x3a;59&#x3a;21 UTC" remediation_status="Fixed"
+                          cia_impact="ppn" grace_period_expires="" affects_policy_compliance="false"
+                          mitigation_status="none" mitigation_status_desc="Not Mitigated"
+                          sourcefile="badcode.java" line="33"
+                          sourcefilepath="tmp&#x2f;build&#x2f;e7389cc7&#x2f;yourapp&#x2f;target&#x2f;your-app-1.0-SNAPSHOT&#x2f;app&#x2f;stuff&#x2f;badcode&#x2f;"
+                          scope="stuffResult2class1619597677"
+                          functionprototype="java.ohno.Code doWork&#x28;&#x29;" functionrelativelocation="35"/>
+                </staticflaws>
+            </cwe>
+        </category>
+    </severity>
+    <severity level="3"/>
+    <severity level="2"/>
+    <severity level="1"/>
+    <severity level="0"/>
+    <flaw-status new="0" reopen="0" open="0" cannot-reproduce="0" fixed="0" total="1" not_mitigated="0" sev-1-change="0"
+                 sev-2-change="0" sev-3-change="0" sev-4-change="0" sev-5-change="0"/>
+    <customfields>
+        <customfield name="Custom 1" value=""/>
+        <customfield name="Custom 2" value=""/>
+        <customfield name="Custom 3" value=""/>
+        <customfield name="Custom 4" value=""/>
+        <customfield name="Custom 5" value=""/>
+        <customfield name="Custom 6" value=""/>
+        <customfield name="Custom 7" value=""/>
+        <customfield name="Custom 8" value=""/>
+        <customfield name="Custom 9" value=""/>
+        <customfield name="Custom 10" value=""/>
+    </customfields>
+    <software_composition_analysis third_party_components="102" violate_policy="true" components_violated_policy="5" blacklisted_components="0">
+        <vulnerable_components>
+            <component component_id="f0ea957f-4396-4567-835a-587db3a04c86" file_name="spring-security-web-5.2.1.RELEASE.jar" sha1="9e43c2d8d2dffc60bfba8ac95a106d30e9593106" vulnerabilities="0" max_cvss_score="" version="5.2.1.RELEASE" library="" vendor="" description="" added_date="2010-02-20 14&#x3a;36&#x3a;47 UTC" new="false" component_affects_policy_compliance="false">
+                <file_paths>
+                    <file_path value="binaries&#x2f;your-app-sca-service-0.53.0.jar&#x23;zip&#x3a;BOOT-INF&#x2f;lib&#x2f;spring-security-web-5.2.1.RELEASE.jar"/>
+                </file_paths>
+                <licenses>
+                    <license name="Apache License 2.0" spdx_id="Apache-2.0" license_url="https&#x3a;&#x2f;&#x2f;spdx.org&#x2f;licenses&#x2f;Apache-2.0.html" risk_rating="2"/>
+                </licenses>
+                <vulnerabilities/>
+                <violated_policy_rules/>
+            </component>
+            <component component_id="feb75396-60ee-45ca-a9d3-abd4f8c2a996" file_name="jackson-mapper-asl-1.9.13.jar" sha1="1ee2f2bed0e5dd29d1cb155a166e6f8d50bbddb7" vulnerabilities="12" max_cvss_score="8.5" version="1.9.13" library="" vendor="" description="" added_date="2010-02-20 14&#x3a;36&#x3a;48 UTC" new="false" component_affects_policy_compliance="true">
+                <file_paths>
+                    <file_path value="binaries&#x2f;your-app-sca-service-0.53.0.jar&#x23;zip&#x3a;BOOT-INF&#x2f;lib&#x2f;jackson-mapper-asl-1.9.13.jar"/>
+                </file_paths>
+                <licenses>
+                    <license name="Apache License 2.0" spdx_id="Apache-2.0" license_url="https&#x3a;&#x2f;&#x2f;spdx.org&#x2f;licenses&#x2f;Apache-2.0.html" risk_rating="2"/>
+                </licenses>
+                <vulnerabilities>
+                    <vulnerability cve_id="CVE-546-879" cvss_score="8.5" severity="4" cwe_id="CWE-465" first_found_date="2010-02-20 14&#x3a;36&#x3a;48 UTC" cve_summary="Gummies wafer marzipan oat cake jujubes apple pie. Sweet roll cupcake cookie caramels lollipop chocolate tart. Pudding powder lollipop marshmallow chocolate cake. Liquorice danish danish topping macaroon danish." severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="CVE-546-645" cvss_score="8.5" severity="4" cwe_id="CWE-678" first_found_date="2010-02-20 14&#x3a;36&#x3a;48 UTC" cve_summary="Jelly jelly beans marzipan sweet roll chocolate bar. Tiramisu powder cotton candy fruitcake. Bear claw halvah sweet roll chocolate cake." severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="CVE-546-679" cvss_score="8.5" severity="4" cwe_id="CWE-64" first_found_date="2010-02-20 14&#x3a;36&#x3a;48 UTC" cve_summary="Jelly pudding candy jelly beans bear claw pie. Jelly pastry jelly beans. Cotton candy pastry cheesecake bonbon carrot cake cake carrot cake brownie lollipop." severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="CVE-864-6544" cvss_score="8.5" severity="4" cwe_id="CWE-500" first_found_date="2010-02-20 14&#x3a;36&#x3a;48 UTC" cve_summary="Cheesecake tootsie roll sweet sesame snaps cake sweet jelly topping. Croissant cupcake candy chocolate bar." severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="CVE-864-5968" cvss_score="5.1" severity="3" cwe_id="CWE-6545" first_found_date="2010-02-20 14&#x3a;36&#x3a;48 UTC" cve_summary="Biscuit donut carrot cake." severity_desc="Medium" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="CVE-864-7489" cvss_score="8.5" severity="4" cwe_id="CWE-46" first_found_date="2010-02-20 14&#x3a;36&#x3a;48 UTC" cve_summary="Tart cheesecake oat cake liquorice danish caramels biscuit. Cupcake jujubes oat cake sweet. " severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="CVE-444-10172" cvss_score="7.2" severity="4" cwe_id="" first_found_date="2010-02-20 14&#x3a;36&#x3a;48 UTC" cve_summary="Oat cake cake marshmallow tootsie roll pastry dessert cookie." severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="CVE-2010-9546" cvss_score="5.5" severity="4" cwe_id="" first_found_date="2010-03-03 11&#x3a;23&#x3a;20 UTC" cve_summary="Lollipop cake jelly sesame snaps ice cream muffin chocolate macaroon sweet roll. Donut sesame snaps fruitcake cake gummies sweet roll jujubes oat cake powder. " severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="CVE-2010-9547" cvss_score="5.5" severity="4" cwe_id="" first_found_date="2010-03-03 07&#x3a;21&#x3a;54 UTC" cve_summary="Pie gingerbread cotton candy marzipan halvah topping jelly-o. " severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="CVE-2010-9548" cvss_score="5.5" severity="4" cwe_id="" first_found_date="2010-03-03 08&#x3a;54&#x3a;51 UTC" cve_summary="Jelly beans croissant brownie jelly beans candy canes macaroon bear claw jelly danish." severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="SRCCLR-SID-11" cvss_score="5.5" severity="4" cwe_id="" first_found_date="2010-03-12 05&#x3a;24&#x3a;43 UTC" cve_summary="Lollipop marshmallow carrot cake." severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                    <vulnerability cve_id="SRCCLR-SID-22" cvss_score="5.5" severity="4" cwe_id="" first_found_date="2010-03-17 08&#x3a;24&#x3a;13 UTC" cve_summary="Jelly-o soufflé candy canes cupcake bear claw bear claw." severity_desc="High" mitigation="false" vulnerability_affects_policy_compliance="true"/>
+                </vulnerabilities>
+                <violated_policy_rules>
+                    <policy_rule type="Disallow Vulnerabilities by Severity" value="Medium" desc="Medium and Above Not Allowed"/>
+                </violated_policy_rules>
+            </component>
+        </vulnerable_components>
+    </software_composition_analysis>
+</detailedreport>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+    Copyright (C)2020 - Cardinal Health
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<summaryreport xmlns="https://www.veracode.com/schema/reports/export/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" account_id="24839" analysis_id="2294827" app_id="420271" app_name="your-application" assurance_level="3" build_id="2308230" business_criticality="3" business_owner="" business_unit="Technologies" first_build_submitted_date="2018-04-26 05:25:38 UTC" flaws_not_mitigated="14" generation_date="2018-05-16 14:41:31 UTC" grace_period_expired="false" is_latest_build="true" last_update_time="2018-05-16 14:32:19 UTC" legacy_scan_engine="false" life_cycle_stage="Not Specified" planned_deployment_date="" platform="Not Specified" policy_compliance_status="Conditional Pass" policy_name="New Policy" policy_rules_status="Did Not Pass" policy_version="2" report_format_version="1.3" sandbox_id="595570" scan_overdue="false" static_analysis_unit_id="2310575" submitter="John Smith" tags="veracode-tag" teams="Your Team,Testing" total_flaws="14" veracode_level="VL2" version="veracode-sample_veracode_3" xsi:schemaLocation="https://www.veracode.com/schema/reports/export/1.0 https://analysiscenter.veracode.com/resource/summaryreport.xsd">
+    <static-analysis analysis_size_bytes="58163" engine_version="122381" next_scan_due="2018-08-16 14:32:12 UTC" published_date="2018-05-16 14:32:12 UTC" rating="A" score="93" submitted_date="2018-05-16 14:31:50 UTC" version="veracode-sample_veracode_3">
+        <modules>
+            <module architecture="JVM" compiler="JAVAC_8" loc="9406" name="your-application-1.22.0.jar" numflawssev0="0" numflawssev1="0" numflawssev2="2" numflawssev3="10" numflawssev4="2" numflawssev5="0" os="Java J2SE 8" score="93"/>
+        </modules>
+    </static-analysis>
+    <severity level="5"/>
+    <severity level="4">
+        <category categoryname="Cryptographic Issues" count="2" severity="High"/>
+    </severity>
+    <severity level="3">
+        <category categoryname="CRLF Injection" count="10" severity="Medium"/>
+    </severity>
+    <severity level="2">
+        <category categoryname="Code Quality" count="1" severity="Low"/>
+        <category categoryname="Information Leakage" count="1" severity="Low"/>
+    </severity>
+    <severity level="1"/>
+    <severity level="0"/>
+    <flaw-status cannot-reproduce="0" fixed="0" new="0" not_mitigated="14" open="14" reopen="0" sev-1-change="0" sev-2-change="0" sev-3-change="0" sev-4-change="0" sev-5-change="0" total="14"/>
+    <customfields>
+        <customfield name="Custom 1" value=""/>
+        <customfield name="Custom 2" value=""/>
+        <customfield name="Custom 3" value=""/>
+        <customfield name="Custom 4" value=""/>
+        <customfield name="Custom 5" value=""/>
+        <customfield name="Custom 6" value=""/>
+        <customfield name="Custom 7" value=""/>
+        <customfield name="Custom 8" value=""/>
+        <customfield name="Custom 9" value=""/>
+        <customfield name="Custom 10" value=""/>
+    </customfields>
+</summaryreport>

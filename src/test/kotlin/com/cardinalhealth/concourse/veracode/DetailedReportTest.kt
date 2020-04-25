@@ -1,0 +1,56 @@
+/**
+ * Copyright (C)2020 - Cardinal Health
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.cardinalhealth.concourse.veracode
+
+import com.fasterxml.jackson.dataformat.xml.XmlMapper
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
+import com.fasterxml.jackson.module.kotlin.readValue
+import com.fasterxml.jackson.module.kotlin.registerKotlinModule
+import org.junit.Assert.assertEquals
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.JUnit4
+import org.springframework.core.io.ClassPathResource
+
+@RunWith(JUnit4::class)
+class DetailedReportTest {
+
+    val mapper = XmlMapper().registerKotlinModule().registerModule(JavaTimeModule())
+
+    @Test
+    fun itReturnsBranchNameFromModuleName() {
+        val subject:DetailedReport  = mapper.readValue(ClassPathResource("detailed-report.xml").inputStream)
+        val expected = "Scan of your-application-master_201901120119.war complete"
+
+        assertEquals(expected, subject.getScanTitle())
+    }
+
+    @Test
+    fun itReturnsTheBranchNameIfWasUsingReleaseBranch() {
+        val subject:DetailedReport = mapper.readValue(ClassPathResource("detailed-report-branch.xml").inputStream)
+        val expected = "Scan of your-app-RELEASE_1_45_1_201901120119.war complete"
+
+        assertEquals(expected, subject.getScanTitle())
+    }
+
+    @Test
+    fun itReturnsTheScaVulnerabilitiesBySeverityLevel() {
+        val subject:DetailedReport = mapper.readValue(ClassPathResource("detailed-report.xml").inputStream)
+
+        assertEquals(11, subject.scaVulnerabilitiesBySeverityLevel(4))
+        assertEquals(1, subject.scaVulnerabilitiesBySeverityLevel(3))
+    }
+}

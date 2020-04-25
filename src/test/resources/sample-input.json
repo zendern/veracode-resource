@@ -1,0 +1,11 @@
+{
+  "source": {
+    "api-id": "myid",
+    "api-key": "mykey",
+    "app-name": "my-app-name"
+  },
+  "version": {
+    "buildId": "2261629",
+    "publishedDate": "2018-05-03T16:27:51Z"
+  }
+}

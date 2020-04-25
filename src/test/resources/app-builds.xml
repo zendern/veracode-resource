@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+
+    Copyright (C)2020 - Cardinal Health
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<applicationbuilds xmlns="https://analysiscenter.veracode.com/schema/2.0/applicationbuilds" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" account_id="24839" xsi:schemaLocation="https://analysiscenter.veracode.com/schema/2.0/applicationbuilds https://analysiscenter.veracode.com/resource/2.0/applicationbuilds.xsd">
+  <application app_id="421958" app_name="your-application" assurance_level="High" business_criticality="High" business_unit="Not Specified" cots="false" industry_vertical="Not Specified" modified_date="2018-05-02T15:29:59-04:00" origin="Not Specified" tags="veracode-tag">
+      <customfield name="Custom 1" value=""/>
+      <customfield name="Custom 2" value=""/>
+      <customfield name="Custom 3" value=""/>
+      <customfield name="Custom 4" value=""/>
+      <customfield name="Custom 5" value=""/>
+      <customfield name="Custom 6" value=""/>
+      <customfield name="Custom 7" value=""/>
+      <customfield name="Custom 8" value=""/>
+      <customfield name="Custom 9" value=""/>
+      <customfield name="Custom 10" value=""/>
+      <build build_id="2257412" grace_period_expired="false" lifecycle_stage="Not Specified" platform="Not Specified" policy_compliance_status="Conditional Pass" policy_name="New Policy" policy_version="2" results_ready="true" rules_status="Did Not Pass" scan_overdue="false" submitter="John Doe" version="veracode_your-application_6">
+         <analysis_unit analysis_type="Static" published_date="2018-05-02T15:29:50-04:00" published_date_sec="1525289390" status="Results Ready"/>
+      </build>
+   </application>
+   <application app_id="415897" app_name="doing-things-application" assurance_level="Very High" business_criticality="Very High" business_unit="Technologies" cots="false" industry_vertical="Not Specified" modified_date="2018-05-10T13:37:13-04:00" origin="Internally Developed" tags="veracode-tag">
+      <customfield name="Custom 1" value=""/>
+      <customfield name="Custom 2" value=""/>
+      <customfield name="Custom 3" value=""/>
+      <customfield name="Custom 4" value=""/>
+      <customfield name="Custom 5" value=""/>
+      <customfield name="Custom 6" value=""/>
+      <customfield name="Custom 7" value=""/>
+      <customfield name="Custom 8" value=""/>
+      <customfield name="Custom 9" value=""/>
+      <customfield name="Custom 10" value=""/>
+      <build build_id="2284634" grace_period_expired="false" lifecycle_stage="Internal or Alpha Testing" platform="Not Specified" policy_compliance_status="Did Not Pass" policy_name="New Policy" policy_version="2" results_ready="true" rules_status="Did Not Pass" scan_overdue="false" submitter="John Smith" version="veracode_doing-things-application_4">
+         <analysis_unit analysis_type="Static" published_date="2018-05-10T13:37:03-04:00" published_date_sec="1525973823" status="Results Ready"/>
+      </build>
+   </application>
+   <application app_id="421911" app_name="special-application" assurance_level="High" business_criticality="High" business_unit="Not Specified" cots="false" industry_vertical="Not Specified" modified_date="2018-05-03T19:40:35-04:00" origin="Not Specified" tags="veracode-tag">
+      <customfield name="Custom 1" value=""/>
+      <customfield name="Custom 2" value=""/>
+      <customfield name="Custom 3" value=""/>
+      <customfield name="Custom 4" value=""/>
+      <customfield name="Custom 5" value=""/>
+      <customfield name="Custom 6" value=""/>
+      <customfield name="Custom 7" value=""/>
+      <customfield name="Custom 8" value=""/>
+      <customfield name="Custom 9" value=""/>
+      <customfield name="Custom 10" value=""/>
+      <build build_id="2263363" grace_period_expired="false" lifecycle_stage="Not Specified" platform="Not Specified" policy_compliance_status="Did Not Pass" policy_name="New Policy" policy_version="2" results_ready="true" rules_status="Did Not Pass" scan_overdue="false" submitter="John Doe" version="veracode_special-application_4">
+         <analysis_unit analysis_type="Static" published_date="2018-05-03T19:40:25-04:00" published_date_sec="1525390825" status="Results Ready"/>
+      </build>
+   </application>
+   <application app_id="421912" app_name="another-one-of-your-applications" assurance_level="High" business_criticality="High" business_unit="Not Specified" cots="false" industry_vertical="Not Specified" modified_date="2018-05-02T14:20:08-04:00" origin="Not Specified" tags="veracode-tag">
+      <customfield name="Custom 1" value=""/>
+      <customfield name="Custom 2" value=""/>
+      <customfield name="Custom 3" value=""/>
+      <customfield name="Custom 4" value=""/>
+      <customfield name="Custom 5" value=""/>
+      <customfield name="Custom 6" value=""/>
+      <customfield name="Custom 7" value=""/>
+      <customfield name="Custom 8" value=""/>
+      <customfield name="Custom 9" value=""/>
+      <customfield name="Custom 10" value=""/>
+      <build build_id="2257128" grace_period_expired="false" lifecycle_stage="Not Specified" platform="Not Specified" policy_compliance_status="Conditional Pass" policy_name="New Policy" policy_version="2" results_ready="true" rules_status="Did Not Pass" scan_overdue="false" submitter="John Doe" version="veracode_another-one-of-your-applications_1">
+         <analysis_unit analysis_type="Static" published_date="2018-05-02T14:19:58-04:00" published_date_sec="1525285198" status="Results Ready"/>
+      </build>
+   </application>
+</applicationbuilds><!-- Parameters&#x3a; report_changed_since&#x3d;04&#x2f;13&#x2f;2018 only_latest&#x3d;true include_in_progress&#x3d;false -->
