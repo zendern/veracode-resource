@@ -76,3 +76,26 @@ license{
     header = file("$project.projectDir/LICENSE-HEADER")
     excludes(["**/*.properties", "**/*.json"])
 }
+
+task copyDockerSource(type: Copy) {
+    from "src/main/docker"
+    into "$buildDir/docker"
+}
+
+task copyDockerVeracodeJar(type: Copy) {
+    from configurations.veracode
+    into "$buildDir/docker"
+    rename ".*", "veracode.jar"
+}
+
+task copyDockerExecutable(type: Copy, dependsOn: bootJar) {
+    from bootJar.archivePath
+    into "$buildDir/docker"
+    rename ".*", "veracode-concourse-resource.jar"
+}
+
+copyDockerVeracodeJar.mustRunAfter copyDockerSource
+copyDockerExecutable.mustRunAfter copyDockerSource
+task doDockerPreWork{
+    dependsOn(['copyDockerSource', 'copyDockerVeracodeJar', 'copyDockerExecutable'])
+}
