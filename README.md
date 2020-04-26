@@ -121,6 +121,14 @@ jobs:
 
 [sample-pipeine.yml](sample-pipeline.yml) includes a more in-depth example that pushes artifacts to veracode and fetches scan results
 
-## Contribution
+## Contributing
 
-Contribution through pull requests is recommended. Once approved, you may run the command `./gradlew pushDocker` to update the Docker image, updating the resource for all pipelines utilizing the `latest` Docker tag for the Veracode resource.
+If you as well want to speed up the pace of software development by working on this project, jump on in! Before you start work, create a new issue, or comment on an existing issue, to let others know you are!
+
+## Releasing
+
+The docker/build-push-action github action should take care of everything for you. What you will need to do to create a release version. 
+1. Bump version in gradle.properties
+2. Create/push a git tag with the same version
+3. Wait for the action to build
+4. If all goes as planned you should have a docker image tagged with the same version as the tag you made. 
