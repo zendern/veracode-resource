@@ -1,0 +1,56 @@
+registry_credentials: &registry_credentials
+  username: ((github.username))
+  password: ((github.token)) # must have read:packages permissions
+
+resources:
+- name: your-project-here-artifact
+  type: maven-resource
+  source:
+    artifact: maven-group-id:your-project-here:jar
+    url: <your artifact repository>
+- name: veracode
+  type: veracode
+  source:
+    api_id: ((veracode-api-id))
+    api_key: ((veracode-api-key))
+    app_name: your-project-here
+resource_types:
+- name: veracode
+  type: docker-image
+  source:
+    repository: github.pkg/cardinal-health/veracode-resource
+    <<: *registry_credentials
+- name: maven-resource
+  type: docker-image
+  source:
+    repository: pivotalpa/maven-resource
+jobs:
+- name: veracode-publish
+  plan:
+    - get: artifact
+      trigger: true
+      resource: your-project-here-artifact
+    - put: artifact
+      resource: veracode
+- name: veracode-slack-alert
+  plan:
+    - get: veracode-report
+      trigger: true
+      resource: veracode
+    - task: slack-alert
+      config:
+        platform: linux
+        image_resource:
+          type: docker-image
+          source:
+            repository: github.pkg/cardinal-health/veracode-resource
+            <<: *registry_credentials
+        inputs:
+          - name: veracode-report
+        params:
+          SLACK_CHANNEL: '#slack-integration'
+          SLACK_TOKEN: ((slack-webhook-token))
+        run:
+          path: /opt/resource/slack
+          args: [summary-report.xml]
+          dir: veracode-report
